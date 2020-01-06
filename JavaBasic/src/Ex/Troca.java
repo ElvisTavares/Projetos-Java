@@ -1,0 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Ex;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Elvis
+ */
+public class Troca {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Informe a idade em anos, meses e dias: ");
+        int idadeA = input.nextInt();
+        int idadeM = input.nextInt();
+        int idadeD = input.nextInt();
+
+        int idadeTot, meses, anos;
+
+        anos = 12 * idadeA;
+        meses = 30 * idadeM;
+
+        idadeTot = anos + meses + idadeD;
+
+        System.out.println("--------");
+        System.out.println(idadeTot);
+
+    }
+}
