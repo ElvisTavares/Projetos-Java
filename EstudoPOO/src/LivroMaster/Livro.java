@@ -50,17 +50,59 @@ public class Livro {
         this.titulo = titulo;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
     
     
     public int adcionarCapitulo(String titulo, String texto){
+       Capitulo cap = new Capitulo(titulo, texto);
+        for (int i = 0; i < capitulos.length; i++) {
+            if (capitulos[i] == null) {
+                capitulos[i] = cap;
+                return i;
+            }
+        }
+        
+        return -1;
        
+    }
+    
+    public int removerCap(Capitulo cap){
+        for (int i = 0; i < capitulos.length; i++) {
+            if (capitulos[i].equals(cap)) {
+                capitulos[i] = null;
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    
+    public int adcionarAutor(Autor autor){
+        for (int i = 0; i < autores.length; i++) {
+            if (autores[i] == null) {
+                autores[i] = autor;
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public int removerAutor(Autor autor){
+        for (int i = 0; i < autores.length; i++) {
+            if (autores[i].equals(autor)) {
+                autores[i] = null;
+                
+                return i;
+            }
+        }
+        
+        return -1;
     }
     
     
